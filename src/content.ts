@@ -114,8 +114,8 @@ export const content = {
     {
       title: "PharmaLink",
       stack: "Angular + ASP.NET Core, EF Core, SQL Server (Clean Architecture)",
-      href: "https://github.com/MahmoudZakariaa/PharmaLink-Angular",
-      hrefLabel: "View on GitHub",
+      href: "https://pharma-link.runasp.net/client/home",
+      hrefLabel: "Visit live site",
       logoSrc: "/logos/pharmalink.png",
       logoAlt: "PharmaLink",
       coverSrc: "/images/project-pharmalink.jpg",

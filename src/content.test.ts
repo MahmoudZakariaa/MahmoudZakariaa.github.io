@@ -8,7 +8,7 @@ describe("content", () => {
     expect(content.projects[0].href).toBe("https://azbgulf.com/home");
     expect(content.projects[0].logoSrc).toBe("/logos/agc.png");
     expect(content.projects[1].href).toBe(
-      "https://github.com/MahmoudZakariaa/PharmaLink-Angular",
+      "https://pharma-link.runasp.net/client/home",
     );
     expect(content.projects[1].logoSrc).toBe("/logos/pharmalink.png");
     expect(content.projects).toHaveLength(2);
