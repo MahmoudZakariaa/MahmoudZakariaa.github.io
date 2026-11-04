@@ -97,14 +97,16 @@ textarea:focus-visible {
   display: inline-flex;
   align-items: center;
   justify-content: center;
-  padding: 0.35rem 0.55rem;
+  padding: 0.45rem 0.65rem;
   border-radius: 8px;
-  background: #f4f7fb;
+  background: #ffffff;
+  border: 1px solid var(--border);
 }
 
 .logo-chip img {
-  height: 28px;
+  height: 36px;
   width: auto;
+  object-fit: contain;
 }
 
 .reveal {

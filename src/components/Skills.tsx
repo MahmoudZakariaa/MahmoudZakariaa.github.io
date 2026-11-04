@@ -5,20 +5,12 @@ export function Skills() {
     <section id="skills" className="section">
       <div className="wrap">
         <h2>Skills</h2>
-        <p style={{ display: "flex", gap: "0.75rem", alignItems: "center", flexWrap: "wrap" }}>
-          <span className="logo-chip">
-            <img src={content.outsystems.logoSrc} alt={content.outsystems.label} />
-          </span>
-          <a href={content.outsystems.href} target="_blank" rel="noopener noreferrer">
-            {content.outsystems.label}
-          </a>
-        </p>
         <div
           style={{
             display: "grid",
             gridTemplateColumns: "repeat(auto-fit, minmax(200px, 1fr))",
             gap: "1.25rem",
-            marginTop: "1.5rem",
+            marginTop: "0.25rem",
           }}
         >
           {content.skills.map((g) => (

@@ -11,10 +11,14 @@ describe("content", () => {
       "https://github.com/MahmoudZakariaa/PharmaLink-Angular",
     );
     expect(content.projects[1].logoSrc).toBe("/logos/pharmalink.png");
+    expect(content.projects).toHaveLength(2);
     expect(content.experience[0].href).toBe("https://envnt.sa/");
     expect(content.experience[0].logoSrc).toBe("/logos/envnt.svg");
     expect(content.experience[1].href).toBe("https://iti.gov.eg/");
     expect(content.experience[1].logoSrc).toBe("/logos/iti.png");
+    expect(content.skills.some((g) => g.items.includes("OutSystems Platform"))).toBe(
+      true,
+    );
     expect(content.about.aiSentence.length).toBeGreaterThan(20);
   });
 });

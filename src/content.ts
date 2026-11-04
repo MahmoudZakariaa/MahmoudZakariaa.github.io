@@ -124,15 +124,6 @@ export const content = {
         "Clean Architecture, RESTful APIs, authentication, and responsive Angular UI.",
       ],
     },
-    {
-      title: "Library Management System",
-      stack: "ASP.NET Core Web API, EF Core, SQL Server",
-      coverSrc: "/images/project-library.jpg",
-      bullets: [
-        "Role-based access and due-date tracking.",
-        "Robust RESTful backend services with EF Core.",
-      ],
-    },
   ] satisfies ProjectItem[],
   skills: [
     {
