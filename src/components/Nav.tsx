@@ -26,8 +26,11 @@ export function Nav() {
         <a
           href="#top"
           style={{
-            fontFamily: "var(--font-display)",
-            fontWeight: 800,
+            fontFamily: "var(--font-body)",
+            fontWeight: 700,
+            fontSize: "clamp(1.25rem, 2.2vw, 1.5rem)",
+            letterSpacing: "0.01em",
+            lineHeight: 1.2,
             color: "var(--text)",
             textDecoration: "none",
           }}
