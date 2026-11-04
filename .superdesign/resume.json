@@ -1,0 +1,10 @@
+{
+  "targets": {
+    "portfolio-landing": {
+      "projectId": "894f896b-45a1-4c66-a1e4-d196b715b3e3",
+      "activeDraftId": "6f2d655b-b745-4c54-90f9-9b8e103d750e",
+      "title": "Portfolio landing v1",
+      "contextFiles": [".superdesign/design-system.md"]
+    }
+  }
+}
