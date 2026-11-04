@@ -1,56 +1,52 @@
+import { useEffect, useId, useState } from "react";
 import { content } from "../content";
 
 export function Nav() {
+  const [open, setOpen] = useState(false);
+  const menuId = useId();
+
+  useEffect(() => {
+    if (!open) return;
+    const onKey = (e: KeyboardEvent) => {
+      if (e.key === "Escape") setOpen(false);
+    };
+    window.addEventListener("keydown", onKey);
+    return () => window.removeEventListener("keydown", onKey);
+  }, [open]);
+
+  useEffect(() => {
+    const mq = window.matchMedia("(min-width: 768px)");
+    const close = () => {
+      if (mq.matches) setOpen(false);
+    };
+    mq.addEventListener("change", close);
+    return () => mq.removeEventListener("change", close);
+  }, []);
+
+  function closeMenu() {
+    setOpen(false);
+  }
+
   return (
-    <header
-      style={{
-        position: "sticky",
-        top: 0,
-        zIndex: 20,
-        backdropFilter: "blur(10px)",
-        borderBottom: "1px solid var(--border)",
-        background: "rgba(11,15,20,0.85)",
-      }}
-    >
-      <nav
-        className="wrap"
-        aria-label="Primary"
-        style={{
-          display: "flex",
-          alignItems: "center",
-          justifyContent: "space-between",
-          gap: "1rem",
-          minHeight: "4rem",
-        }}
-      >
-        <a
-          href="#top"
-          style={{
-            fontFamily: "var(--font-body)",
-            fontWeight: 700,
-            fontSize: "clamp(1.25rem, 2.2vw, 1.5rem)",
-            letterSpacing: "0.01em",
-            lineHeight: 1.2,
-            color: "var(--text)",
-            textDecoration: "none",
-          }}
-        >
+    <header className="site-header">
+      <nav className="wrap site-nav" aria-label="Primary">
+        <a href="#top" className="site-brand" onClick={closeMenu}>
           {content.person.name}
         </a>
-        <ul
-          style={{
-            display: "flex",
-            gap: "1rem",
-            listStyle: "none",
-            margin: 0,
-            padding: 0,
-            flexWrap: "wrap",
-            justifyContent: "flex-end",
-          }}
+        <button
+          type="button"
+          className="nav-toggle"
+          aria-expanded={open}
+          aria-controls={menuId}
+          onClick={() => setOpen((v) => !v)}
         >
+          <span className="sr-only">{open ? "Close menu" : "Open menu"}</span>
+          <span className="nav-toggle-bars" aria-hidden="true" />
+        </button>
+        <ul id={menuId} className={`site-nav-links${open ? " is-open" : ""}`}>
           {content.nav.map((item) => (
             <li key={item.id}>
-              <a href={`#${item.id}`} style={{ color: "var(--muted)" }}>
+              <a href={`#${item.id}`} onClick={closeMenu}>
                 {item.label}
               </a>
             </li>

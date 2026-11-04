@@ -37,7 +37,7 @@ export function ContactForm() {
     <section id="contact" className="section">
       <div className="wrap">
         <h2>Contact</h2>
-        <p style={{ color: "var(--muted)" }}>
+        <p style={{ color: "var(--muted)", overflowWrap: "anywhere" }}>
           <a href={`mailto:${content.person.email}`}>{content.person.email}</a>
           {" · "}
           <a href={content.person.phoneHref}>{content.person.phone}</a>
