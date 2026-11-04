@@ -15,8 +15,29 @@ export function Experience() {
               }}
             >
               <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
-                <span className="logo-chip">
-                  <img src={job.logoSrc} alt={job.logoAlt} />
+                <span
+                  className={job.org.includes("ITI") ? undefined : "logo-chip"}
+                  style={
+                    job.org.includes("ITI")
+                      ? {
+                          display: "inline-flex",
+                          alignItems: "center",
+                          borderRadius: 8,
+                          overflow: "hidden",
+                          border: "1px solid var(--border)",
+                        }
+                      : undefined
+                  }
+                >
+                  <img
+                    src={job.logoSrc}
+                    alt={job.logoAlt}
+                    style={
+                      job.org.includes("ITI")
+                        ? { height: 48, width: "auto", display: "block" }
+                        : undefined
+                    }
+                  />
                 </span>
                 <div>
                   <strong>{job.role}</strong>
