@@ -26,3 +26,6 @@ site-query.json
 *.njsproj
 *.sln
 *.sw?
+
+!docs/
+!docs/**
