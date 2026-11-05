@@ -20,5 +20,20 @@ describe("content", () => {
       true,
     );
     expect(content.about.aiSentence.length).toBeGreaterThan(20);
+    expect(content.courses.map((c) => c.title)).toEqual([
+      "OutSystems Platform",
+      "Agentic AI Training",
+      "AI Fluency: Framework & Foundations",
+      "Claude in Action & Claude 101",
+    ]);
+    expect(JSON.stringify(content).toLowerCase()).not.toContain("certification");
+    expect(content.techLogos.some((l) => l.name === "React" || l.name === "Node.js")).toBe(
+      false,
+    );
+    expect(
+      content.skills.some((g) =>
+        g.items.some((item) => item === "React" || item === "Node.js"),
+      ),
+    ).toBe(false);
   });
 });

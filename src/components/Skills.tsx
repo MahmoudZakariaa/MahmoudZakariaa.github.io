@@ -2,12 +2,12 @@ import { content } from "../content";
 
 export function Skills() {
   return (
-    <section id="skills" className="section">
+    <section id="skills" className="section reveal-on-scroll">
       <div className="wrap">
         <h2>Skills</h2>
         <div className="skills-grid">
           {content.skills.map((g) => (
-            <div key={g.title}>
+            <div key={g.title} className="skill-group">
               <h3 className="skills-title">{g.title}</h3>
               <ul className="skills-list">
                 {g.items.map((i) => (

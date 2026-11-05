@@ -2,13 +2,15 @@ import { content } from "../content";
 
 export function About() {
   return (
-    <section id="about" className="section">
+    <section id="about" className="section reveal-on-scroll">
       <div className="wrap">
         <h2>About</h2>
-        <p style={{ maxWidth: "42rem", color: "var(--muted)" }}>{content.about.summary}</p>
-        <p style={{ maxWidth: "42rem" }}>{content.about.aiSentence}</p>
-        <p style={{ color: "var(--muted)" }}>{content.about.education}</p>
-        <p style={{ color: "var(--muted)" }}>{content.about.languages}</p>
+        <div className="measure">
+          <p className="muted">{content.about.summary}</p>
+          <p>{content.about.aiSentence}</p>
+          <p className="muted">{content.about.education}</p>
+          <p className="muted">{content.about.languages}</p>
+        </div>
       </div>
     </section>
   );

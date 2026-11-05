@@ -23,6 +23,8 @@ export type ProjectItem = {
 
 export type SkillGroup = { title: string; items: string[] };
 
+export type CourseItem = { title: string; detail?: string };
+
 export type TechLogo = { name: string; src: string };
 
 export const content = {
@@ -51,21 +53,20 @@ export const content = {
     { id: "experience", label: "Experience" },
     { id: "projects", label: "Projects" },
     { id: "skills", label: "Skills" },
-    { id: "contact", label: "Contact" },
+    { id: "courses", label: "Courses" },
   ] satisfies NavItem[],
   hero: {
     role: "Associate Software Engineer | OutSystems & Full-Stack .NET Developer",
     blurb:
-      "I build enterprise web apps with OutSystems and full-stack .NET — scalable features, clean integrations, and practical automation.",
+      "I build enterprise web apps with OutSystems and full-stack .NET — application features, REST and SOAP integrations, and workflow automation.",
     primaryCta: { label: "View projects", href: "#projects" },
-    secondaryCta: { label: "Get in touch", href: "#contact" },
     backgroundSrc: "/images/hero-atmosphere.jpg",
   },
   about: {
     summary:
-      "Associate Software Engineer with experience in enterprise application development, low-code platforms, and full-stack .NET solutions using OutSystems, Angular, and ASP.NET Core. Skilled in building scalable applications, RESTful integrations, and AI-assisted automation workflows using n8n and modern AI coding tools. Strong understanding of OOP, SOLID principles, Clean Architecture, and Agile methodologies, with a passion for problem solving, automation, and modern software engineering practices.",
+      "Associate Software Engineer with experience in enterprise application development, low-code platforms, and full-stack .NET solutions using OutSystems, Angular, and ASP.NET Core. Skilled in building web applications, RESTful integrations, and AI-assisted automation workflows using n8n and modern AI coding tools. Strong understanding of OOP, SOLID principles, Clean Architecture, and Agile methodologies, with a passion for problem solving, automation, and modern software engineering practices.",
     aiSentence:
-      "I work daily with AI-assisted engineering — pairing modern AI coding tools with automation workflows to ship carefully reviewed, production-ready software faster.",
+      "I use AI coding tools and automation workflows such as n8n in day-to-day engineering, and I review generated changes before using them.",
     education:
       "B.Eng. in Mechatronics, Fayoum University (2023) — GPA 3.4 / 4.0, Ranked 2nd",
     languages: "Arabic (Native), English (Professional Working Proficiency)",
@@ -108,7 +109,7 @@ export const content = {
       coverSrc: "/images/project-agc.jpg",
       bullets: [
         "Full-stack web app with admin dashboard, secure authentication, and content management.",
-        "JWT auth, role-based access, responsive UI, and optimized RESTful APIs.",
+        "JWT auth, role-based access, a responsive UI, and RESTful APIs.",
       ],
     },
     {
@@ -125,6 +126,12 @@ export const content = {
       ],
     },
   ] satisfies ProjectItem[],
+  courses: [
+    { title: "OutSystems Platform" },
+    { title: "Agentic AI Training", detail: "ITIDA" },
+    { title: "AI Fluency: Framework & Foundations" },
+    { title: "Claude in Action & Claude 101" },
+  ] satisfies CourseItem[],
   skills: [
     {
       title: "Languages",
@@ -181,6 +188,10 @@ export const content = {
       items: ["Agile/Scrum", "CI/CD Fundamentals"],
     },
     {
+      title: "Security",
+      items: ["Burp Suite", "Secure coding"],
+    },
+    {
       title: "Tools",
       items: [
         "Git",
@@ -203,8 +214,6 @@ export const content = {
     { name: "TypeScript", src: "/logos/tech/typescript.svg" },
     { name: "Docker", src: "/logos/tech/docker.svg" },
     { name: "Git", src: "/logos/tech/git.svg" },
-    { name: "Node.js", src: "/logos/tech/nodedotjs.svg" },
-    { name: "React", src: "/logos/tech/react.svg" },
     { name: "MySQL", src: "/logos/tech/mysql.svg" },
   ] satisfies TechLogo[],
 } as const;

@@ -2,46 +2,19 @@ import { content } from "../content";
 
 export function Experience() {
   return (
-    <section id="experience" className="section">
+    <section id="experience" className="section reveal-on-scroll">
       <div className="wrap">
         <h2>Experience</h2>
-        <ol style={{ listStyle: "none", margin: 0, padding: 0 }}>
+        <ol className="rule-list">
           {content.experience.map((job) => (
-            <li
-              key={job.org}
-              style={{
-                borderTop: "1px solid var(--border)",
-                paddingBlock: "1.5rem",
-              }}
-            >
-              <div style={{ display: "flex", gap: "1rem", flexWrap: "wrap", alignItems: "center" }}>
-                <span
-                  className={job.org.includes("ITI") ? undefined : "logo-chip"}
-                  style={
-                    job.org.includes("ITI")
-                      ? {
-                          display: "inline-flex",
-                          alignItems: "center",
-                          borderRadius: 8,
-                          overflow: "hidden",
-                          border: "1px solid var(--border)",
-                        }
-                      : undefined
-                  }
-                >
-                  <img
-                    src={job.logoSrc}
-                    alt={job.logoAlt}
-                    style={
-                      job.org.includes("ITI")
-                        ? { height: 48, width: "auto", display: "block" }
-                        : undefined
-                    }
-                  />
+            <li key={job.org}>
+              <div className="job-head">
+                <span className={job.org.includes("ITI") ? "logo-plain" : "logo-chip"}>
+                  <img src={job.logoSrc} alt={job.logoAlt} />
                 </span>
                 <div>
-                  <strong>{job.role}</strong>
-                  <div style={{ color: "var(--muted)" }}>
+                  <strong className="job-role">{job.role}</strong>
+                  <div className="job-meta">
                     <a href={job.href} target="_blank" rel="noopener noreferrer">
                       {job.org}
                     </a>{" "}
@@ -51,9 +24,7 @@ export function Experience() {
               </div>
               <ul>
                 {job.bullets.map((b) => (
-                  <li key={b} style={{ color: "var(--muted)" }}>
-                    {b}
-                  </li>
+                  <li key={b}>{b}</li>
                 ))}
               </ul>
             </li>

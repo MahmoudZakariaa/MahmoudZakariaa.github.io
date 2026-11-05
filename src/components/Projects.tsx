@@ -2,13 +2,15 @@ import { content } from "../content";
 
 export function Projects() {
   return (
-    <section id="projects" className="section">
+    <section id="projects" className="section reveal-on-scroll">
       <div className="wrap">
         <h2>Projects</h2>
         <div className="project-list">
           {content.projects.map((p) => (
             <article key={p.title} className="project-card">
-              <img className="project-cover" src={p.coverSrc} alt="" />
+              <div className="project-shot">
+                <img className="project-cover" src={p.coverSrc} alt="" />
+              </div>
               <div className="project-body">
                 <div className="project-heading">
                   {p.logoSrc ? (

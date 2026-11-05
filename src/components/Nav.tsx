@@ -3,6 +3,7 @@ import { content } from "../content";
 
 export function Nav() {
   const [open, setOpen] = useState(false);
+  const [current, setCurrent] = useState("");
   const menuId = useId();
 
   useEffect(() => {
@@ -15,12 +16,29 @@ export function Nav() {
   }, [open]);
 
   useEffect(() => {
-    const mq = window.matchMedia("(min-width: 768px)");
+    const mq = window.matchMedia("(min-width: 860px)");
     const close = () => {
       if (mq.matches) setOpen(false);
     };
     mq.addEventListener("change", close);
     return () => mq.removeEventListener("change", close);
+  }, []);
+
+  useEffect(() => {
+    const sections = content.nav
+      .map((item) => document.getElementById(item.id))
+      .filter((node): node is HTMLElement => node !== null);
+    const observer = new IntersectionObserver(
+      (entries) => {
+        const visible = entries
+          .filter((entry) => entry.isIntersecting)
+          .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+        if (visible?.target.id) setCurrent(visible.target.id);
+      },
+      { rootMargin: "-45% 0px -45% 0px", threshold: [0.1, 0.25, 0.5] },
+    );
+    sections.forEach((section) => observer.observe(section));
+    return () => observer.disconnect();
   }, []);
 
   function closeMenu() {
@@ -46,7 +64,11 @@ export function Nav() {
         <ul id={menuId} className={`site-nav-links${open ? " is-open" : ""}`}>
           {content.nav.map((item) => (
             <li key={item.id}>
-              <a href={`#${item.id}`} onClick={closeMenu}>
+              <a
+                href={`#${item.id}`}
+                aria-current={current === item.id ? "location" : undefined}
+                onClick={closeMenu}
+              >
                 {item.label}
               </a>
             </li>
