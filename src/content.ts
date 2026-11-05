@@ -101,7 +101,7 @@ export const content = {
   projects: [
     {
       title: "AGC Lubricants",
-      stack: "Angular, ASP.NET Core Web API, JWT, SQL Server (Freelance)",
+      stack: "Angular, ASP.NET Core Web API, JWT, SQL Server",
       href: "https://azbgulf.com/home",
       hrefLabel: "Visit live site",
       logoSrc: "/logos/agc.png",
